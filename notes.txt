@@ -1,0 +1,37 @@
+sass sass/main.scss public/assets/css/styles.css --style=compressed
+
+* open server from public/  
+* Or use .htaccess to deny access others and move public/* to root of project
+*
+* php -r "echo password_hash('your_password', PASSWORD_DEFAULT) . PHP_EOL;"
+* to generate hashed password
+*
+
+to do's
+--------------
+char limit
+edit option?
+image size limit
+...
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    image TEXT,
+    short_description TEXT,
+    long_description TEXT,
+    status BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE users (                                                       
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password_digest VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL
+);
+
+
+
+
+
